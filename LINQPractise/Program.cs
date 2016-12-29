@@ -27,7 +27,35 @@ namespace LINQPractise
 
            var stdList = from variable in std.GetStudentList()
                          select  variable;
-            Console.WriteLine(stdList);
+
+            foreach (var stud in stdList)
+            {
+                Console.WriteLine(stud.Name + stud.Age);   
+            }
+
+            Console.WriteLine("\n");
+
+            //Lamda Expression: full student list 
+
+            //Console.WriteLine("full student list " + Environment.NewLine);
+            //var studentList = std.GetStudentList();
+            //foreach (var stude in studentList)
+            //{
+            //    Console.WriteLine(stude.Name + stude.Age);
+            //}
+
+            //Console.WriteLine("\n");
+
+            //Lamda Expression: full student list for one condition age > 30
+
+            Console.WriteLine("full student greater than 30 age: " + Environment.NewLine);
+            var studentListInfo = std.GetStudentList().Where(x=>x.Age>30);
+            foreach (var stude in studentListInfo)
+            {
+                Console.WriteLine("name:"+ stude.Name + " " + "age" + stude.Age + " " + "ID:" + " " + stude.Id);
+            }
+
+
 
 
             Console.ReadKey();
