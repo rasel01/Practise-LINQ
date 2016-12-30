@@ -57,14 +57,18 @@ namespace LINQPractise
             //order by asecending and decending order:
             //var studentListInfo = std.GetStudentList().Where(x => x.Age > 30).OrderByDescending(x=>x.Name);
 
-            // count of the student
+            // count of the student(aggregate function)
            // int counting = std.GetStudentList().Count(x => x.Age > 30);
             //Console.WriteLine(counting);
 
-            //foreach (var stude in studentListInfo)
-            //{
-            //    Console.WriteLine("name:"+ stude.Name + " " + "age :" +" " + stude.Age + " " + "ID:" + " " + stude.Id);
-            //}
+             var studentListInfo = std.GetStudentList();
+
+
+
+            foreach (var stude in studentListInfo)
+            {
+                Console.WriteLine("name:" + stude.Name + " " + "age :" + " " + stude.Age + " " + "ID:" + " " + stude.Id);
+            }
 
 
 

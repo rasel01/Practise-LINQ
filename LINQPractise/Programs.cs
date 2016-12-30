@@ -57,13 +57,26 @@ namespace LINQPractise
             //order by asecending and decending order:
             //var studentListInfo = std.GetStudentList().Where(x => x.Age > 30).OrderByDescending(x=>x.Name);
 
-            // count of the student
+            // count of the student(aggregate function)
            // int counting = std.GetStudentList().Count(x => x.Age > 30);
             //Console.WriteLine(counting);
 
+             var studentListInfo = std.GetStudentList();
+            Student firstValue = studentListInfo.FirstOrDefault();
+            Console.WriteLine(firstValue.Name + ":" + firstValue.Age + ":" + firstValue.Id);
+
+            var testArray = new[] {1,3,5,7,9};
+            var testArray2 = new[] {"rasel","cell","belt"};
+            //var value = testArray.FirstOrDefault(x => x % 2 == 0);
+            var value = testArray2.FirstOrDefault(x=>x.Contains("cell"));
+            Console.WriteLine(value);
+
+
+
+
             //foreach (var stude in studentListInfo)
             //{
-            //    Console.WriteLine("name:"+ stude.Name + " " + "age :" +" " + stude.Age + " " + "ID:" + " " + stude.Id);
+            //    Console.WriteLine("name:" + stude.Name + " " + "age :" + " " + stude.Age + " " + "ID:" + " " + stude.Id);
             //}
 
 
